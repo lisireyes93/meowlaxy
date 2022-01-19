@@ -1,0 +1,282 @@
+/* COLORS!!! */
+/* PURPLE = rgb(32, 37, 70) */
+/* PINK = rgb(188, 134, 142) */
+/* YELLOW = rgb(252, 237, 208) */
+
+body {
+  background: linear-gradient(
+    100deg,
+    rgb(32, 37, 70) 0%,
+    rgb(188, 134, 142) 51%,
+    rgb(252, 237, 208) 85%
+  );
+}
+
+.headerImg {
+  background-image: url("https://i.pinimg.com/originals/11/ef/14/11ef1494d6bd1bdc2adbb5e07e539ea0.jpg");
+  background-size: cover;
+  position: relative;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.header {
+  background-color: #382b52;
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 10px;
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  border-radius: 5px;
+  font-family: Trebuchet MS;
+}
+
+/* .fa-solid fa-rocket {
+  height: 1000px;
+  width: 1000px;
+} */
+
+.collection {
+  width: 1000px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.flipCard {
+  background-color: transparent;
+  width: 300px;
+  height: 375px;
+  border: 3px solid #000000;
+  perspective: 1000px;
+  display: inline-grid;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 3px 4px rgb(188, 134, 142);
+}
+
+.flipInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 5px;
+}
+
+.flipCard:hover .flipInner {
+  transform: rotateY(180deg);
+}
+
+.galFlipFront,
+.flipBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.galFlipFront {
+  /* width: 250px;
+  height: 400px;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px; */
+
+  background-color: rgb(252, 237, 208);
+  color: black;
+  border-radius: 5px;
+}
+
+.flipBack {
+  background-color: rgb(252, 237, 208);
+  color: rgb(0, 0, 0);
+  transform: rotateY(180deg);
+  border-radius: 5px;
+}
+
+.galImg {
+  width: 200px;
+  height: 200px;
+  /* height: fit-content; */
+  justify-self: center;
+  border-radius: 5px;
+}
+
+.galDesc {
+  width: 250px;
+  height: 275px;
+  font-size: 13px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-align: center;
+  text-align: justify;
+  margin: 0 auto;
+  padding-right: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* ::-webkit-scrollbar-track {
+  background-color: rgb(235, 212, 166);
+  border-radius: 20px;
+}; */
+
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 20px;
+  border: 2px solid rgb(188, 134, 142);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(188, 134, 142);
+  border: 2px solid rgb(0, 0, 0);
+}
+
+button {
+  height: 30px;
+  width: 30px;
+  color: rgb(188, 134, 142);
+  background-color: #000000;
+  border: rgb(188, 134, 142) solid 2px;
+  border-radius: 20px;
+}
+
+button:hover {
+  height: 33px;
+  width: 33px;
+  background-color: rgb(188, 134, 142);
+  border: #000000 solid 2px;
+  color: #000000;
+}
+
+h2,
+p {
+  font-family: Trebuchet MS;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.likeWord {
+  width: 50%;
+  float: left;
+  text-align: right;
+}
+
+.likeAmnt {
+  width: 50%;
+  float: right;
+  text-align: left;
+}
+
+.sneakyCat {
+  height: 200px;
+  float: right;
+}
+
+.sneakyCat:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 4px rgb(188, 134, 142);
+}
+
+.modal-content {
+  background-color: rgb(252, 237, 208);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  width: 70%; /* Could be more or less, depending on screen size */
+  border-radius: 8px;
+  box-shadow: 3px 4px rgb(188, 134, 142);
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  width: 25px;
+  height: 25px;
+  color: rgb(188, 134, 142);
+  background-color: #000000;
+  border: rgb(188, 134, 142) solid 2px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgb(188, 134, 142);
+  border: #000000 solid 2px;
+}
+
+/* COLORS!!! */
+/* PURPLE = rgb(32, 37, 70) */
+/* PINK = rgb(188, 134, 142) */
+/* YELLOW = rgb(252, 237, 208) */
